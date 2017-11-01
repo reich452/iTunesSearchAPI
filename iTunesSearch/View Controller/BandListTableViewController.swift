@@ -8,40 +8,51 @@
 
 import UIKit
 
-class BandListTableViewController: UITableViewController {
+class BandListTableViewController: UITableViewController, UISearchBarDelegate {
 
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+    // MARK: - Properties
+    var bands = [Band]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        searchBar.delegate = self
+        self.tableView.rowHeight = 150
+        
+    }
+    
+    // MARK: - Delegate
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.text = ""
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let searchTerm = searchBar.text else { return }
+        
+        BandController.shared.fetchBand(matching: searchTerm) { (bands) in
+            guard let bands = bands else { return }
+            self.bands = bands
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
     
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 0
+        return bands.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "bandCell", for: indexPath)
-        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "bandCell", for: indexPath) as? BandTableViewCell else { return UITableViewCell() }
+
+        let band = self.bands[indexPath.row]
+        cell.updateWith(band: band)
         return cell
     }
     
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        }
-        
-    }
-    
-    // MARK: - Navigation
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-    }
-
-
 }

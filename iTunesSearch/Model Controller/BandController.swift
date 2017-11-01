@@ -7,11 +7,13 @@
 //
 
 import Foundation
+import UIKit
 
 class BandController {
     static let shared = BandController()
     
     let baseUrl = URL(string: "https://itunes.apple.com/search?")!
+    let baseImageUrl = URL(fileURLWithPath: "http://is5.mzstatic.com/image/thumb/Music20/v4/b1/b4/66/b1b466cd-56c6-f91b-9d1e-9effd58ddecb/source/100x100bb")
     
     func fetchBand(matching searchTerm: String, completion: @escaping ([Band]?) -> Void) {
         let url = bandURL(for: searchTerm)
@@ -38,18 +40,39 @@ class BandController {
                 completion([])
                 return
             }
+
             
             }.resume()
     }
     
+    func fetchImage(band: Band, completion: @escaping (UIImage?) -> Void) {
+        let imageUrl = baseImageUrl.appendingPathExtension("jpg")
+        
+        URLSession.shared.dataTask(with: imageUrl) { (data, _, error) in
+            if let error = error {
+                print("\(error) \(error.localizedDescription)")
+                completion(nil)
+                return
+            }
+            guard let data = data else {
+                print("Cannot get image data")
+                completion(nil); return
+                
+            }
+            let image = UIImage(data: data)
+            completion(image)
+            
+        }.resume()
+    }
+   
+    
     // TODO: - Fetch Image 
-    
-    
     
     private func bandURL(for artistName: String) -> URL {
         
         var components = URLComponents(url: baseUrl, resolvingAgainstBaseURL: true)!
-        let queryItems = [URLQueryItem(name: "term", value: artistName)]
+        let queryItems = [URLQueryItem(name: "term", value: artistName),
+                          URLQueryItem(name: "lang", value: "en_us")]
         components.queryItems = queryItems
         return components.url!
     }

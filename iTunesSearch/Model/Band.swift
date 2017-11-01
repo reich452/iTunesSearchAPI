@@ -16,7 +16,7 @@ struct Band: Decodable {
     let recordTitle: String    // In JSON this is the collectionName
     let recordPrice: Double // In JSON this is collectionPrice
     let trackCount: Int
-    let recordImage: String
+    var recordImageURL: URL
 
 }
 
@@ -28,7 +28,7 @@ extension Band {
         case recordTitle = "collectionName"
         case recordPrice = "collectionPrice"
         case trackCount
-        case recrodImage = "artworkUrl100"
+        case recrodImageURL = "artworkUrl100"
     }
     
     init(from decoder: Decoder) throws {
@@ -38,7 +38,7 @@ extension Band {
         recordTitle = try values.decode(String.self, forKey: CodingKeys.recordTitle)
         recordPrice = try values.decode(Double.self, forKey: CodingKeys.recordPrice)
         trackCount = try values.decode(Int.self, forKey: CodingKeys.trackCount)
-        recordImage = try values.decode(String.self, forKey: CodingKeys.recrodImage)
+        recordImageURL = try values.decode(URL.self, forKey: CodingKeys.recrodImageURL)
     }
 }
 
