@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		01BB1C1E1FAA5C0400C8EEB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BB1C1D1FAA5C0400C8EEB1 /* AppDelegate.swift */; };
-		01BB1C201FAA5C0400C8EEB1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BB1C1F1FAA5C0400C8EEB1 /* ViewController.swift */; };
 		01BB1C231FAA5C0400C8EEB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01BB1C211FAA5C0400C8EEB1 /* Main.storyboard */; };
 		01BB1C251FAA5C0400C8EEB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01BB1C241FAA5C0400C8EEB1 /* Assets.xcassets */; };
 		01BB1C281FAA5C0400C8EEB1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01BB1C261FAA5C0400C8EEB1 /* LaunchScreen.storyboard */; };
@@ -17,7 +16,6 @@
 /* Begin PBXFileReference section */
 		01BB1C1A1FAA5C0400C8EEB1 /* iTunesSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunesSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01BB1C1D1FAA5C0400C8EEB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		01BB1C1F1FAA5C0400C8EEB1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		01BB1C221FAA5C0400C8EEB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		01BB1C241FAA5C0400C8EEB1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		01BB1C271FAA5C0400C8EEB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -54,14 +52,53 @@
 		01BB1C1C1FAA5C0400C8EEB1 /* iTunesSearch */ = {
 			isa = PBXGroup;
 			children = (
-				01BB1C1D1FAA5C0400C8EEB1 /* AppDelegate.swift */,
-				01BB1C1F1FAA5C0400C8EEB1 /* ViewController.swift */,
-				01BB1C211FAA5C0400C8EEB1 /* Main.storyboard */,
-				01BB1C241FAA5C0400C8EEB1 /* Assets.xcassets */,
-				01BB1C261FAA5C0400C8EEB1 /* LaunchScreen.storyboard */,
-				01BB1C291FAA5C0400C8EEB1 /* Info.plist */,
+				01BB1C321FAA5C2E00C8EEB1 /* UI */,
+				01BB1C311FAA5C1E00C8EEB1 /* View Controller */,
+				01BB1C301FAA5C1600C8EEB1 /* Model Controller */,
+				01BB1C2F1FAA5C1000C8EEB1 /* Model */,
+				01BB1C331FAA5C3D00C8EEB1 /* Resources */,
 			);
 			path = iTunesSearch;
+			sourceTree = "<group>";
+		};
+		01BB1C2F1FAA5C1000C8EEB1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		01BB1C301FAA5C1600C8EEB1 /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Model Controller";
+			sourceTree = "<group>";
+		};
+		01BB1C311FAA5C1E00C8EEB1 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		01BB1C321FAA5C2E00C8EEB1 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				01BB1C211FAA5C0400C8EEB1 /* Main.storyboard */,
+				01BB1C261FAA5C0400C8EEB1 /* LaunchScreen.storyboard */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		01BB1C331FAA5C3D00C8EEB1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				01BB1C1D1FAA5C0400C8EEB1 /* AppDelegate.swift */,
+				01BB1C241FAA5C0400C8EEB1 /* Assets.xcassets */,
+				01BB1C291FAA5C0400C8EEB1 /* Info.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,7 +173,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01BB1C201FAA5C0400C8EEB1 /* ViewController.swift in Sources */,
 				01BB1C1E1FAA5C0400C8EEB1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,7 +311,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = iTunesSearch/Info.plist;
+				DEVELOPMENT_TEAM = MU4CK45G4T;
+				INFOPLIST_FILE = "$(SRCROOT)/iTunesSearch/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wesstpeak.iTunesSearch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -289,7 +326,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = iTunesSearch/Info.plist;
+				DEVELOPMENT_TEAM = MU4CK45G4T;
+				INFOPLIST_FILE = "$(SRCROOT)/iTunesSearch/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wesstpeak.iTunesSearch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
