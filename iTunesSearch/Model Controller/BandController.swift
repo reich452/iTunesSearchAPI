@@ -13,6 +13,9 @@ class BandController {
     
     let baseUrl = URL(string: "https://itunes.apple.com/search?")!
     
+    func fetchBand(matching artistName: String, completion: @escaping ([Band]) -> Void) {
+        
+    }
     
     
     

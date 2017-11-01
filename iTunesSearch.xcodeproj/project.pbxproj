@@ -11,7 +11,7 @@
 		01BB1C231FAA5C0400C8EEB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01BB1C211FAA5C0400C8EEB1 /* Main.storyboard */; };
 		01BB1C251FAA5C0400C8EEB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01BB1C241FAA5C0400C8EEB1 /* Assets.xcassets */; };
 		01BB1C281FAA5C0400C8EEB1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01BB1C261FAA5C0400C8EEB1 /* LaunchScreen.storyboard */; };
-		01BB1C351FAA648800C8EEB1 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BB1C341FAA648800C8EEB1 /* Artist.swift */; };
+		01BB1C351FAA648800C8EEB1 /* Band.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BB1C341FAA648800C8EEB1 /* Band.swift */; };
 		01BB1C371FAA6BF600C8EEB1 /* BandController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BB1C361FAA6BF600C8EEB1 /* BandController.swift */; };
 /* End PBXBuildFile section */
 
@@ -22,7 +22,7 @@
 		01BB1C241FAA5C0400C8EEB1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		01BB1C271FAA5C0400C8EEB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		01BB1C291FAA5C0400C8EEB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		01BB1C341FAA648800C8EEB1 /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
+		01BB1C341FAA648800C8EEB1 /* Band.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Band.swift; sourceTree = "<group>"; };
 		01BB1C361FAA6BF600C8EEB1 /* BandController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BandController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -68,7 +68,7 @@
 		01BB1C2F1FAA5C1000C8EEB1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				01BB1C341FAA648800C8EEB1 /* Artist.swift */,
+				01BB1C341FAA648800C8EEB1 /* Band.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -179,7 +179,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01BB1C351FAA648800C8EEB1 /* Artist.swift in Sources */,
+				01BB1C351FAA648800C8EEB1 /* Band.swift in Sources */,
 				01BB1C1E1FAA5C0400C8EEB1 /* AppDelegate.swift in Sources */,
 				01BB1C371FAA6BF600C8EEB1 /* BandController.swift in Sources */,
 			);
