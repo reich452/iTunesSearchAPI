@@ -102,6 +102,16 @@
                                         <constraint firstItem="SOG-2D-rwo" firstAttribute="centerX" secondItem="GbM-Xo-T2o" secondAttribute="centerX" multiplier="1.3" id="yaW-eO-P9X"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="artistName" destination="NC0-z0-WEH" id="nEF-qa-qbs"/>
+                                    <outlet property="artistNameLabel" destination="NC0-z0-WEH" id="XAl-F0-WhV"/>
+                                    <outlet property="genreLabel" destination="Udv-Jx-D9e" id="waM-WU-dF6"/>
+                                    <outlet property="recordImageView" destination="QVI-Fy-k34" id="ShK-1P-6bK"/>
+                                    <outlet property="recordPriceLabel" destination="SOG-2D-rwo" id="VbU-fq-rrv"/>
+                                    <outlet property="recordTitle" destination="nEW-hf-zJt" id="sWh-rr-rrf"/>
+                                    <outlet property="recordTitleLabel" destination="nEW-hf-zJt" id="Y8R-9Q-xng"/>
+                                    <outlet property="trackCountLabel" destination="yvL-hL-Jtr" id="msk-47-VH8"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
