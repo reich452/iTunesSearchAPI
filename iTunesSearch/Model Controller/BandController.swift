@@ -13,7 +13,7 @@ class BandController {
     static let shared = BandController()
     
     let baseUrl = URL(string: "https://itunes.apple.com/search?")!
-    let baseImageUrl = URL(fileURLWithPath: "http://is5.mzstatic.com/image/thumb/Music20/v4/b1/b4/66/b1b466cd-56c6-f91b-9d1e-9effd58ddecb/source/100x100bb")
+    
     
     func fetchBand(matching searchTerm: String, completion: @escaping ([Band]?) -> Void) {
         let url = bandURL(for: searchTerm)
@@ -36,7 +36,7 @@ class BandController {
                 completion(bands.results)
                 
             } catch let error {
-                print("Either no data was returned, or data was not serialized \(error.localizedDescription)")
+                print("Either no data was returned, or data was not serialized \(error) + \(error.localizedDescription)")
                 completion([])
                 return
             }
@@ -46,7 +46,7 @@ class BandController {
     }
     
     func fetchImage(band: Band, completion: @escaping (UIImage?) -> Void) {
-        let imageUrl = baseImageUrl.appendingPathExtension("jpg")
+        let imageUrl = band.recordImageURL
         
         URLSession.shared.dataTask(with: imageUrl) { (data, _, error) in
             if let error = error {

@@ -13,7 +13,7 @@ struct Band: Decodable {
     // MARK: - Properties
     let artistName: String
     let genre: String
-    let recordTitle: String    // In JSON this is the collectionName
+    let recordTitle: String?    // In JSON this is the collectionName
     let recordPrice: Double // In JSON this is collectionPrice
     let trackCount: Int
     var recordImageURL: URL
