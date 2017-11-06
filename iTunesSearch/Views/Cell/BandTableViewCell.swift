@@ -26,9 +26,9 @@ class BandTableViewCell: UITableViewCell {
        
         artistNameLabel.text = band.artistName
         genreLabel.text = band.genre
-        trackCountLabel.text = "Songs: \(band.trackCount ?? 0)"
-        recordPriceLabel.text = "$ \(band.recordPrice ?? 0.0)"
-        recordTitleLabel.text = band.collectionName
+        trackCountLabel.text = "Songs: \(band.trackCount ?? 1)"
+        recordPriceLabel.text = "$ \(band.albumPrice ?? 0.0)"
+        recordTitleLabel.text = band.albumName
         BandController.shared.fetchImage(band: band) { (image) in
             
             DispatchQueue.main.async {
