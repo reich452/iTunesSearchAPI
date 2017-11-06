@@ -33,6 +33,7 @@ class BandController {
                     completion([]); return }
                 
                 let bands = try jsonDecoder.decode(Bands.self, from: data)
+                
                 completion(bands.results)
                 
             } catch let error {
@@ -41,12 +42,11 @@ class BandController {
                 return
             }
 
-            
             }.resume()
     }
     
     func fetchImage(band: Band, completion: @escaping (UIImage?) -> Void) {
-        let imageUrl = band.recordImageURL
+        guard let imageUrl = band.recordImageURL else { return }
         
         URLSession.shared.dataTask(with: imageUrl) { (data, _, error) in
             if let error = error {

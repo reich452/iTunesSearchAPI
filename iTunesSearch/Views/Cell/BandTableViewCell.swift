@@ -23,12 +23,12 @@ class BandTableViewCell: UITableViewCell {
     // MARK: - Main
     
     func updateWith(band: Band) {
-        recordTitleLabel.text = band.recordTitle
+       
         artistNameLabel.text = band.artistName
         genreLabel.text = band.genre
-        trackCountLabel.text = "Songs: \(band.trackCount)"
-        recordPriceLabel.text = "$ \(band.recordPrice)"
-        
+        trackCountLabel.text = "Songs: \(band.trackCount ?? 0)"
+        recordPriceLabel.text = "$ \(band.recordPrice ?? 0.0)"
+        recordTitleLabel.text = band.collectionName
         BandController.shared.fetchImage(band: band) { (image) in
             
             DispatchQueue.main.async {
